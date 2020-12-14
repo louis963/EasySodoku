@@ -3,8 +3,10 @@ import sys
 
 pygame.init()
 
+
 # Set this to False if you don't want to see progress
-PROGRESS = True
+PROGRESS = False
+
 
 data = []
 data.append("""
@@ -90,7 +92,7 @@ def draw():
             cx = j*BOX_SIZE
             cy = i*BOX_SIZE
             if GRID[i][j] != 0:
-                color = BLACK if D[i][j] != 0 else ORANGE
+                color = BLACK if D[i][j] != 0 else RED
                 label = font.render(str(GRID[i][j]), 1, color)
                 screen.blit(label, (cx+15, cy+5))
             r = pygame.Rect(cx, cy, BOX_SIZE, BOX_SIZE)
@@ -107,7 +109,7 @@ size = WIDTH * BOX_SIZE, HEIGHT * BOX_SIZE
 BLACK = (000, 000, 000)
 WHITE = (255, 255, 255)
 GREY = (127, 127, 127)
-ORANGE = (255, 127, 000)
+RED = (255, 000, 000)
 screen = pygame.display.set_mode(size)
 screen.fill(WHITE)
 
